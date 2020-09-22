@@ -1,0 +1,10 @@
+{
+    "in_dim": 128,
+    "h_dim": 128, 
+    "bert_weight_name": "google/bert_uncased_L-2_H-128_A-2",
+    "dropout": 0.2,
+    "reg_param": 0.00000001,
+    "n_negs": 4,
+    "bidirectional": false,
+    "num_layers": 1
+}

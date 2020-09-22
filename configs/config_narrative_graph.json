@@ -1,0 +1,76 @@
+{
+    "config_target": "narrative_graph",
+    "nyt_dir": "/scratch3/lee2226/archive/dnee/nyt_splits_v0.3.0",
+    "no_entity": true,
+    "rtype2idx": {
+        "next": 0,
+        "cnext": 1,
+        "Temporal.Asynchronous.Precedence": 2,
+        "Temporal.Asynchronous.Succession": 3,
+        "Temporal.Synchrony": 4,
+        "Contingency.Cause.Reason": 5,
+        "Contingency.Cause.Result": 6,
+        "Comparison.Contrast": 7
+    },
+    "pp_sampling_distribution": {
+        "next": 0.5,
+        "cnext": 0.2,
+        "Temporal.Asynchronous.Precedence": 0.05,
+        "Temporal.Asynchronous.Succession": 0.05,
+        "Temporal.Synchrony": 0.05,
+        "Contingency.Cause.Reason": 0.05,
+        "Contingency.Cause.Result": 0.05,
+        "Comparison.Contrast": 0.05
+    },
+    "discourse_markers": {
+      "Temporal.Asynchronous.Precedence": [
+        "then",
+        "before",
+        "until",
+        "finally",
+        "thereafter",
+        "afterward",
+        "afterwards"
+      ],
+      "Temporal.Asynchronous.Succession": [
+        "after",
+        "once",
+        "previously",
+        "earlier"
+      ],
+      "Temporal.Synchrony": [
+        "while",
+        "meanwhile",
+        "in the meantime",
+        "simultaneously"
+      ],
+      "Contingency.Cause.Reason": [
+        "because"
+      ],
+      "Contingency.Cause.Result": [
+        "thus",
+        "as a result",
+        "so that",
+        "therefore",
+        "thereby",
+        "consequently",
+        "ultimately",
+        "in turn"
+      ],
+      "Comparison.Contrast": [
+          "but",
+          "in contrast",
+          "conversely",
+          "however",
+          "nevertheless",
+          "and yet",
+          "on the other hand",
+          "on the contrary",
+          "in fact",
+          "although",
+          "as opposed to",
+          "where as",
+          "even though"
+      ]
+    }
+}
