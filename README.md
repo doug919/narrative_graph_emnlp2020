@@ -47,15 +47,15 @@ We provide commands that evaluate our pre-trained NG model in each evaluation ta
 
 ### Extrinsic: Implicit Discourse Sense Classification
 
-> #### Val
+#### Val
 > python bin/task/implicit_discourse/train_3.py tmpout test --test_dir v1_released/data/features_conll16v4_ng284000_dev --test_rel v1_released/data/conll16_pdtb_dev/relations_dev.json --model_file v1_released/model/out_conll16v4_ng284000_mclass_lr13_wd095_cw_p20_19777/best_model.pt -v -g 0 --use_ng
->
-> #### Test
+
+#### Test
 > python bin/task/implicit_discourse/train_3.py tmpout test --test_dir v1_released/data/features_conll16v4_ng284000_test --test_rel v1_released/data/conll16_pdtb_test/relations_test.json --model_file v1_released/model/out_conll16v4_ng284000_mclass_lr13_wd095_cw_p20_19777/best_model.pt -v -g 0 --use_ng
->
-> #### Blind-Test
+
+#### Blind-Test
 > python bin/task/implicit_discourse/train_3.py tmpout test --test_dir v1_released/data/features_conll16v4_ng284000_blind_test --test_rel v1_released/data/conll16_pdtb_blind/relations_blind.json --model_file v1_released/model/out_conll16v4_ng284000_mclass_lr13_wd095_cw_p20_19777/best_model.pt -v -g 0 --use_ng
->
+
 
 ## Run Pre-training from Scratch
 
