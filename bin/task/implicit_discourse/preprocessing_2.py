@@ -39,8 +39,7 @@ def get_arguments(argv):
                         help='the parse file for Discourse Sense')
     parser.add_argument('output_folder', metavar='OUTPUT_FOLDER',
                         help='the folder for outputs.')
-    # parser.add_argument('feature_set', metavar='feature_set', choices=['elmo', 'ng'],
-    #                     help='feature set')
+
     parser.add_argument("--bert_weight_name",
                         default='google/bert_uncased_L-2_H-128_A-2', type=str,
                         help="bert weight version")
