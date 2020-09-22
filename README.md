@@ -59,5 +59,17 @@ We provide commands that evaluate our pre-trained NG model in each evaluation ta
 
 ## Run Pre-training from Scratch
 
+### For Narrative Graph Pre-training
+
+We will prepare a script to do the steps below, except Step 1. Here we still write down the pipeline flow for reference.
+
+1. Parse raw text of Gigaword NYT using Stanford CoreNLP and save the parsing output in the json format (one document in one line). We mainly need the dependency tree and coreference resolution outputs. We provide an example output json file that contains two documents: v{0-9}_released/data/example_parsed
+2. run `bin/pretraining/prepare_ng_1.py` to prepare narrative graphs for each split.
+3. run `bin/pretraining/sample_triplets_2.py` to sample negative edges for dev and test splits (the train split will be sampled during training).
+4. run `bin/pretraining/train_3.py` for training.
+
+## Other Notes
+- Sample intrinsic evaluations' questions: run `bin/pretraining/sample_intrinsic_4.py`.
+- Sample MCNC questions: run `bin/pretraining/sample_mcnc_6.py`.
 
 
