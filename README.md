@@ -47,17 +47,29 @@ We provide commands that evaluate our pre-trained NG model in each evaluation ta
 
 ### Extrinsic: Implicit Discourse Sense Classification
 
-> #### Val
+#### Val
 > python bin/task/implicit_discourse/train_3.py tmpout test --test_dir v1_released/data/features_conll16v4_ng284000_dev --test_rel v1_released/data/conll16_pdtb_dev/relations_dev.json --model_file v1_released/model/out_conll16v4_ng284000_mclass_lr13_wd095_cw_p20_19777/best_model.pt -v -g 0 --use_ng
->
-> #### Test
+
+#### Test
 > python bin/task/implicit_discourse/train_3.py tmpout test --test_dir v1_released/data/features_conll16v4_ng284000_test --test_rel v1_released/data/conll16_pdtb_test/relations_test.json --model_file v1_released/model/out_conll16v4_ng284000_mclass_lr13_wd095_cw_p20_19777/best_model.pt -v -g 0 --use_ng
->
-> #### Blind-Test
+
+#### Blind-Test
 > python bin/task/implicit_discourse/train_3.py tmpout test --test_dir v1_released/data/features_conll16v4_ng284000_blind_test --test_rel v1_released/data/conll16_pdtb_blind/relations_blind.json --model_file v1_released/model/out_conll16v4_ng284000_mclass_lr13_wd095_cw_p20_19777/best_model.pt -v -g 0 --use_ng
->
+
 
 ## Run Pre-training from Scratch
 
+### For Narrative Graph Pre-training
+
+We will prepare a script to do the steps below, except Step 1. Here we still write down the pipeline flow for reference.
+
+1. Parse raw text of Gigaword NYT using Stanford CoreNLP and save the parsing output in the json format (one document in one line). We mainly need the dependency tree and coreference resolution outputs. We provide an example output json file that contains two documents: v{0-9}_released/data/example_parsed
+2. run `bin/pretraining/prepare_ng_1.py` to prepare narrative graphs for each split.
+3. run `bin/pretraining/sample_triplets_2.py` to sample negative edges for dev and test splits (the train split will be sampled during training).
+4. run `bin/pretraining/train_3.py` for training.
+
+## Other Notes
+- Sample intrinsic evaluations' questions: run `bin/pretraining/sample_intrinsic_4.py`.
+- Sample MCNC questions: run `bin/pretraining/sample_mcnc_6.py`.
 
 
