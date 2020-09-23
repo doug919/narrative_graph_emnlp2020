@@ -1,6 +1,6 @@
 {
     "config_target": "narrative_graph",
-    "nyt_dir": "/scratch3/lee2226/archive/dnee/nyt_splits_v0.3.0",
+    "nyt_dir": "v1_released/data/nyt_parsed_examples",
     "no_entity": true,
     "rtype2idx": {
         "next": 0,
