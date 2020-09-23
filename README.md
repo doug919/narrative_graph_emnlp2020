@@ -64,9 +64,13 @@ We provide commands that evaluate our pre-trained NG model in each evaluation ta
 We will prepare a script to do the steps below, except Step 1. Here we still write down the pipeline flow for reference.
 
 1. Parse raw text of Gigaword NYT using Stanford CoreNLP and save the parsing output in the json format (one document in one line). We mainly need the dependency tree and coreference resolution outputs. We provide an example output json file that contains two documents: v{0-9}_released/data/example_parsed
-2. run `bin/pretraining/prepare_ng_1.py` to prepare narrative graphs for each split.
-3. run `bin/pretraining/sample_triplets_2.py` to sample negative edges for dev and test splits (the train split will be sampled during training).
+2. run `bin/pretraining/prepare_ng_1.py` to prepare narrative graphs for each split. Note that the corpus folder is specified in the config file. The default example input is `v1_released/data/nyt_parsed_examples`. There are only two documents in each split for demoonstrating.  Run this command for *train*, *dev*, and *test* splits.
+  > python bin/pretraining/prepare_ng_1.py configs/config_narrative_graph.json ng_features --target_split dev -v
+3. run `bin/pretraining/sample_triplets_2.py` to sample negative edges for *train*, *dev* and *test* splits (the train split will be sampled during training).
+  > python bin/pretraining/sample_triplets_2.py configs/config_narrative_graph.json ng_features/dev dev neg_sample_dev -v
 4. run `bin/pretraining/train_3.py` for training.
+  > python3 bin/pretraining/train_3.py configs/config_narrative_graph.json configs/config_model_rgcn_ng_pp_mclass_dropout01.json out_model --train_dir neg_sample_train --dev_dir neg_sample_dev --model_name ng -v -g 0
+  There are of course more detailed options. Please refer to the help menu of each command.
 
 ## Other Notes
 - Sample intrinsic evaluations' questions: run `bin/pretraining/sample_intrinsic_4.py`.
