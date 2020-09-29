@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 ## Data
 
-The data used in the paper can be downloaded from here: 
+The data used in the paper can be downloaded from here: https://drive.google.com/file/d/1cTXGlf2Z5DBkEqsYDlQg6pG8Ol-HGNLo/view?usp=sharing
 
 Simply decompress it to the repository folder. The default folder name is `v{0-9}_released`. The subfolder `data` contains pre-processed dev and test sets, and `model` contains all the trained models. Note that the pre-processed training set is too huge to share. If you need it, please follow `Run Pre-training from Scratch` section to run the pre-processing code on the raw training. The raw training data can be found in the links below:
 - Englishg Gigaword: https://catalog.ldc.upenn.edu/LDC2011T07
